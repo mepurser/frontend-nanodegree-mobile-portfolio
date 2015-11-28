@@ -513,7 +513,9 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  // reduced the number of pizzas rendered from 200 to 32; 32 pizzas ensures there are
+  // always at least 4 complete rows of 8 pizzas rendered
+  for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
