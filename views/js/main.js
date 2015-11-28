@@ -422,6 +422,7 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+  // Extraneous code was removed
   function changePizzaSizes(size) {
 
       switch(size) {
@@ -437,6 +438,7 @@ var resizePizzas = function(size) {
     
 
   // Iterates through pizza elements on the page and changes their widths
+  // The '.querySelectorAll' method was pulled out of the loop and code was simplified
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
     
     for (var i = 0; i < randomPizzas.length; i++) {
@@ -490,6 +492,8 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  // 'scrolledPixels' defined as a variable so that 'document.body.scrollTop' didn't need
+  // to be calculated with each iteration of the loop
   var scrolledPixels = document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrolledPixels / 1250) + (i % 5));
