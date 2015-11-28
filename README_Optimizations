@@ -1,0 +1,16 @@
+Optimizations in 'index.html'
+-----------------------------
+
+1) Reference print media query/stylesheet only on print
+2) Execute google analytics js asynchronously
+3) Reduce profilepic.gif image size
+4) Reduce pizzeria.jpg image size
+5) Remove link to fonts.googleapis since 'Open Sans' appears to be already available to the browser
+
+Optimizations in 'main.js'
+--------------------------
+
+1) Simply function determineDx by removing extraneous calculations
+2) Move 'document.querySelectorAll' out of loop in function 'changePizzaSizes' so that this method isn't called with every loop iteration
+3) Define 'document.body.scrollTop' as a variable  so that it doesn't need to be calculated with each loop iteration
+4) Reduced number of pizzes rendered from 200 to 32 to ensure that enough pizzas are rendered to display 4 complete rows of 8 pizzas.
